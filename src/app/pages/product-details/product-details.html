@@ -1,0 +1,40 @@
+<div class="container py-5" >
+  <div class="card shadow-lg p-4">
+    <div class="row">
+      <div class="col-md-5 text-center">
+        <img
+          [src]="product.thumbnail"
+          class="img-fluid rounded mb-3"
+          alt="{{product.title}}"
+          style="max-height: 400px; object-fit: contain;"
+        >
+        <div class="d-flex gap-2 justify-content-center flex-wrap">
+          @for (img of product.images; track $index) {
+            <img [src]="img" alt="gallery" style="width: 80px; height: 80px; object-fit: cover; border-radius: 6px;">
+          }
+        </div>
+      </div>
+
+      <div class="col-md-7">
+        <h2 class="mb-3">{{ product.title }}</h2>
+        <p class="text-muted">{{ product.brand }} • {{ product.category }}</p>
+
+        <div class="mb-4">
+          <h4 class="d-inline me-3">${{ product.price }}</h4>
+          @if (product.discountPercentage > 0) {
+            <span class="text-danger h5">
+              -{{product.discountPercentage}}% off
+            </span>
+          }
+          <span class="badge bg-success ms-3">★ {{product.rating}} / 5</span>
+        </div>
+
+        <p><strong>Stock:</strong> {{product.stock}} available</p>
+
+        <h5>Description</h5>
+        <p>{{product.description}}</p>
+
+      </div>
+    </div>
+  </div>
+</div>

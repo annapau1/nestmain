@@ -1,0 +1,18 @@
+.rowsss{
+
+    display: flex;
+    width: 100;
+    flex-wrap: wrap;
+}
+
+.card{
+    margin: 10px;
+    padding: 5px;
+    width: 8cm;
+}
+
+.card img{
+    margin: auto;
+    width: 6cm;
+    height: 6cm;
+}
